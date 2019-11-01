@@ -1,7 +1,7 @@
 (function ($) {
   "use strict";
 
-  // Preloader (if the #preloader div exists)
+  // Preloader 
   $(window).on('load', function () {
     if ($('#preloader').length) {
       $('#preloader').delay(100).fadeOut('slow', function () {
@@ -39,7 +39,7 @@
     $('#header').addClass('header-scrolled');
   }
 
-  // Smooth scroll for the navigation and links with .scrollto classes
+  // Smooth scroll for the navigation 
   $('.main-nav a, .mobile-nav a, .scrollto').on('click', function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -92,23 +92,10 @@
     });
   });
 
-  // jQuery counterUp (used in Whu Us section)
+  // counterUp 
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 1000
-  });
-
-  // Porfolio isotope and filter
-  $(window).on('load', function () {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item'
-    });
-    $('#portfolio-flters li').on( 'click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-  
-      portfolioIsotope.isotope({ filter: $(this).data('filter') });
-    });
   });
 
   // Testimonials carousel (uses the Owl Carousel library)
